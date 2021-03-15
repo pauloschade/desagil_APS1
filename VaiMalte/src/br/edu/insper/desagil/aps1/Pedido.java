@@ -23,9 +23,11 @@ public class Pedido {
 		this.quantidade += 1;
 	}
 	
-	public int totalPrice() {
-		int preco = this.produto.getPreco();
-		return this.quantidade * preco;
+	public double totalPrice() {
+		double total;
+		double preco = this.produto.getPreco();
+		total = preco * this.quantidade;
+		return total;
 	}
 	
 
