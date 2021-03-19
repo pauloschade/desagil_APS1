@@ -16,10 +16,14 @@ public class Carrinho {
 		return this.pedidos;
 	}
 	
-	public void incrementaLista(Produto produto) {
+	public void adicionaPedido(Produto produto) {
 		
 		for (Pedido i: pedidos ) {
 			if (i.getProduto().getCodigo() == produto.getCodigo()) {
+				
+				if(i.getProduto().getNome()!= produto.getNome()) {
+					return;
+				}
 				i.increaseQuantidade();
 				return;
 			}

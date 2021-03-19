@@ -7,6 +7,10 @@ public class Testador {
 	private Produto caderno = new Produto(1, "caderno", 20);
 	private Produto caneta = new Produto(3, "caneta", 5);
 	
+	//Criando produto com o mesmo código para testar se o método
+	//que impede adicionar 2 produtos com id igual mas nome diferentes funciona
+	private Produto computador = new Produto(3, "computador", 500);
+	
 	public boolean testeA() {
 			
 		double total = caixa.valorTotal(cart);
@@ -19,7 +23,7 @@ public class Testador {
 
 	public boolean testeB() {
 	
-		cart.incrementaLista(caderno);
+		cart.adicionaPedido(caderno);
 		
 		double total = caixa.valorTotal(cart);
 		
@@ -32,8 +36,11 @@ public class Testador {
 	
 	public boolean testeC() {
 		
-		cart.incrementaLista(caneta);
-
+		cart.adicionaPedido(caneta);
+		
+		//Se o método estiver funcionando não deve ser adicionado ao caixa
+		cart.adicionaPedido(computador);
+		
 		caixa.insereDesconto(caneta, 20);
 			
 		double total = caixa.valorTotal(cart);
@@ -48,9 +55,9 @@ public class Testador {
 
 	public boolean testeD() {
 		
-		cart.incrementaLista(caderno);
-		cart.incrementaLista(caderno);
-		cart.incrementaLista(caneta);
+		cart.adicionaPedido(caderno);
+		cart.adicionaPedido(caderno);
+		cart.adicionaPedido(caneta);
 		
 		caixa.insereDesconto(caneta, 20);
 			
@@ -66,9 +73,9 @@ public class Testador {
 
 	public boolean testeE() {
 	
-		cart.incrementaLista(caderno);
-		cart.incrementaLista(caneta);
-		cart.incrementaLista(caneta);
+		cart.adicionaPedido(caderno);
+		cart.adicionaPedido(caneta);
+		cart.adicionaPedido(caneta);
 		
 		caixa.insereDesconto(caneta, 20);
 			
