@@ -10,7 +10,7 @@ public class Caixa {
 		this.descontos = new HashMap<>();
 	}
 	
-	public void insereItem(Produto produto, int desconto) {
+	public void insereDesconto(Produto produto, int desconto) {
 		if(desconto>=1 && desconto<=99) {
 			this.descontos.put(produto.getCodigo(), desconto);
 			return;
