@@ -42,7 +42,10 @@ public class Testador {
 		cart.adicionaPedido(computador);
 		
 		caixa.insereDesconto(caneta, 20);
-			
+		
+		//Se já adicionou um desconto não deve adicionar mais
+		caixa.insereDesconto(caneta, 50);
+		
 		double total = caixa.valorTotal(cart);
 		
 		if(total == 4) {
