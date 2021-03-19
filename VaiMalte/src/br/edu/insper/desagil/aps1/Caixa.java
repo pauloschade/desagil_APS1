@@ -12,9 +12,6 @@ public class Caixa {
 	
 	public void insereDesconto(Produto produto, int desconto) {
 		if(desconto>=1 && desconto<=99) {
-			if(descontos.containsKey(produto.getCodigo())) {
-				return;
-			}
 			this.descontos.put(produto.getCodigo(), desconto);
 			return;
 		}

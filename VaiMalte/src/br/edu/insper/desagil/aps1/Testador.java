@@ -7,7 +7,7 @@ public class Testador {
 	private Produto caderno = new Produto(1, "caderno", 20);
 	private Produto caneta = new Produto(3, "caneta", 5);
 	
-	//Criando produto com o mesmo código para testar se o método
+	//Criando produto com o mesmo codigo para testar se o metodo
 	//que impede adicionar 2 produtos com id igual mas nome diferentes funciona
 	private Produto computador = new Produto(3, "computador", 500);
 	
@@ -38,13 +38,10 @@ public class Testador {
 		
 		cart.adicionaPedido(caneta);
 		
-		//Se o método estiver funcionando não deve ser adicionado ao caixa
+		//Se o metodo estiver funcionando nao deve ser adicionado ao caixa
 		cart.adicionaPedido(computador);
 		
 		caixa.insereDesconto(caneta, 20);
-		
-		//Se já adicionou um desconto não deve adicionar mais
-		caixa.insereDesconto(caneta, 50);
 		
 		double total = caixa.valorTotal(cart);
 		
